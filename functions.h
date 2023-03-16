@@ -4,7 +4,7 @@
 void bubbleSort(int *array, int length);
 void mergeSort(int *array, int length);
 void quickSort(int *array, int length);
-void binarySearch(int *array, int value, int length);
-void ternarySearch(int *array, int value, int length);
+int binarySearch(int *array, int value, int length);
+int ternarySearch(int *array, int value, int length);
 
 #endif

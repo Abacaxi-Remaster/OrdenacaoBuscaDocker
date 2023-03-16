@@ -1,6 +1,12 @@
 #include "..\functions.h"
 
-void ternarySearch(int *array, int value, int length)
+int ternarySearch(int *array, int value, int length)
 {
-    // TODO: implement me
+    return tSearch(array, value, 0, length);
+}
+
+int tSearch(int *array, int value, int start, int end)
+{
+    // TODO: Implement me
+    return -1;
 }
