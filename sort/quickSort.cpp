@@ -1,5 +1,3 @@
-#include "..\functions.hpp"
-
 void quickSort(int *array, int length)
 {
     return qSort(array, 0, length);

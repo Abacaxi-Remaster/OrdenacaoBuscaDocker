@@ -1,4 +1,5 @@
-#include "functions.hpp"
+#ifndef RANDOMARRAY_HPP
+#define RANDOMARRAY_HPP
 #include <ctime>
 #include <cstdlib>
 
@@ -8,6 +9,7 @@ void randomArray(int **array, int length, int floor, int celling)
     srand(time(0));
     for (int i = 0; i < length; i++)
     {
-        (*array)[i] = rand() % (celling-floor) + floor;
+        (*array)[i] = rand() % (celling - floor) + floor;
     }
 }
+#endif

@@ -1,5 +1,3 @@
-#include "..\functions.hpp"
-
 void mergeSort(int *array, int length)
 {
     mSort(array, 0, length);
