@@ -1,45 +1,45 @@
-void Merge(int *A, int l, int c, int r)
+void Merge(int *array, int left, int center, int rigth)
 {
-	int sizel = c - l + 1; // tamanho da primeira parte
-	int sizer = r - c;	   // tamanho da segunda parte
+	int sizel = center - left + 1; // tamanho da primeira parte
+	int sizer = rigth - center;	   // tamanho da segunda parte
 	int L[sizel] = {};
 	int R[sizer] = {};
 
 	for (int i = 0; i < sizel; i++)
 	{
-		L[i] = A[l + i]; // preenche a metade esquerda
+		L[i] = array[left + i]; // preenche a metade esquerda
 	}
 	for (int j = 0; j < sizer; j++)
 	{
-		R[j] = A[c + j + 1]; // preenche a metade direita
+		R[j] = array[center + j + 1]; // preenche a metade direita
 	}
 	int i = 0;
 	int j = 0;
-	int k = l;
+	int k = left;
 	while (i < sizel && j < sizer)
 	{ // Arruma do menor pro maior
 		if (L[i] <= R[j])
 		{
-			A[k] = L[i];
+			array[k] = L[i];
 			i++;
 		}
 		else
 		{
-			A[k] = R[j];
+			array[k] = R[j];
 			j++;
 		}
 		k++;
 	}
 	while (i < sizel)
 	{ // restante
-		A[k] = L[i];
+		array[k] = L[i];
 		i++;
 		k++;
 	}
 
 	while (j < sizer)
 	{
-		A[k] = R[j];
+		array[k] = R[j];
 		j++;
 		k++;
 	}
