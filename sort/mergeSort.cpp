@@ -1,7 +1,7 @@
-void Merge(int *array, int left, int center, int rigth)
+void Merge(int *array, int left, int center, int right)
 {
 	int sizel = center - left + 1; // tamanho da primeira parte
-	int sizer = rigth - center;	   // tamanho da segunda parte
+	int sizer = right - center;	   // tamanho da segunda parte
 	int L[sizel] = {};
 	int R[sizer] = {};
 
