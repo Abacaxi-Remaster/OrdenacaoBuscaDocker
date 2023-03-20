@@ -1,12 +1,16 @@
 #include <iostream>
-#include "functions.hpp"
+#include "sort.hpp"
 #include "randomArray.hpp"
 
 using namespace std;
 
 int main()
 {
+    int length = 5;
+    int bottom = 0;
+    int ceiling = 10;
     int *array;
-    randomArray(&array, 5, 0, 10);
+    randomArray(&array, length, bottom, ceiling);
+    bubbleSort(array, length);
     return 0;
 }
