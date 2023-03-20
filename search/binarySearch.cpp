@@ -1,4 +1,4 @@
-#include "..\functions.h"
+#include "..\functions.hpp"
 
 int binarySearch(int *array, int value, int length)
 {

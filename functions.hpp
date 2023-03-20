@@ -6,6 +6,5 @@ void mergeSort(int *array, int length);
 void quickSort(int *array, int length);
 int binarySearch(int *array, int value, int length);
 int ternarySearch(int *array, int value, int length);
-void randomArray(int *array, int length, int bottom, int top);
 
 #endif

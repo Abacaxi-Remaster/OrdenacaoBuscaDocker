@@ -1,4 +1,4 @@
-#include "..\functions.h"
+#include "..\functions.hpp"
 
 void mergeSort(int *array, int length)
 {

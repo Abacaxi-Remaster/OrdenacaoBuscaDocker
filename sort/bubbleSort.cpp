@@ -1,4 +1,4 @@
-#include "..\functions.h"
+#include "..\functions.hpp"
 
 void bubbleSort(int *array, int length)
 {

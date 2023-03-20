@@ -1,4 +1,4 @@
-#include "..\functions.h"
+#include "..\functions.hpp"
 
 int ternarySearch(int *array, int value, int length)
 {
