@@ -11,6 +11,6 @@ int main()
     int ceiling = 10;
     int *array;
     randomArray(&array, length, bottom, ceiling);
-    bubbleSort(array, length);
+    mergeSort(array, length);
     return 0;
 }
