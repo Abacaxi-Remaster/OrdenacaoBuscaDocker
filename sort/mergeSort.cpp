@@ -45,18 +45,18 @@ void Merge(int *array, int left, int center, int right)
 	}
 }
 
-void mSort(int *arr, int start, int end)
+void mSort(int *array, int start, int end)
 {
 	if (start < end)
 	{
 		int center = (start + end) / 2;
-		mSort(arr, start, center);
-		mSort(arr, center + 1, end);
-		Merge(arr, start, center, end);
+		mSort(array, start, center);
+		mSort(array, center + 1, end);
+		Merge(array, start, center, end);
 	}
 }
 
-void mergeSort(int *arr, int length)
+void mergeSort(int *array, int length)
 {
-	mSort(arr, 0, length);
+	mSort(array, 0, length-1);
 }
