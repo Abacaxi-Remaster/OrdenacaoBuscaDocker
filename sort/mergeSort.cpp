@@ -1,62 +1,62 @@
-void Merge(int *A, int l, int c, int r)
+void Merge(int *array, int left, int center, int right)
 {
-	int sizel = c - l + 1; // tamanho da primeira parte
-	int sizer = r - c;	   // tamanho da segunda parte
+	int sizel = center - left + 1; // tamanho da primeira parte
+	int sizer = right - center;	   // tamanho da segunda parte
 	int L[sizel] = {};
 	int R[sizer] = {};
 
 	for (int i = 0; i < sizel; i++)
 	{
-		L[i] = A[l + i]; // preenche a metade esquerda
+		L[i] = array[left + i]; // preenche a metade esquerda
 	}
 	for (int j = 0; j < sizer; j++)
 	{
-		R[j] = A[c + j + 1]; // preenche a metade direita
+		R[j] = array[center + j + 1]; // preenche a metade direita
 	}
 	int i = 0;
 	int j = 0;
-	int k = l;
+	int k = left;
 	while (i < sizel && j < sizer)
 	{ // Arruma do menor pro maior
 		if (L[i] <= R[j])
 		{
-			A[k] = L[i];
+			array[k] = L[i];
 			i++;
 		}
 		else
 		{
-			A[k] = R[j];
+			array[k] = R[j];
 			j++;
 		}
 		k++;
 	}
 	while (i < sizel)
 	{ // restante
-		A[k] = L[i];
+		array[k] = L[i];
 		i++;
 		k++;
 	}
 
 	while (j < sizer)
 	{
-		A[k] = R[j];
+		array[k] = R[j];
 		j++;
 		k++;
 	}
 }
 
-void mSort(int *arr, int start, int end)
+void mSort(int *array, int start, int end)
 {
 	if (start < end)
 	{
 		int center = (start + end) / 2;
-		mSort(arr, start, center);
-		mSort(arr, center + 1, end);
-		Merge(arr, start, center, end);
+		mSort(array, start, center);
+		mSort(array, center + 1, end);
+		Merge(array, start, center, end);
 	}
 }
 
-void mergeSort(int *arr, int length)
+void mergeSort(int *array, int length)
 {
-	mSort(arr, 0, length);
+	mSort(array, 0, length-1);
 }
