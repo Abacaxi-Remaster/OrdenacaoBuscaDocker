@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int length = 5;
+    int length = 7;
     int bottom = 0;
     int ceiling = 3;
     int *array;
