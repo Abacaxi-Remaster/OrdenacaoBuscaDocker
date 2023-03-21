@@ -12,7 +12,7 @@ int main()
     int ceiling = 3;
     int *array;
     randomArray(&array, length, bottom, ceiling);
-    bubbleSort(array, length);
-    cout << binarySearch(array,2,length);
+    mergeSort(array, length);
+    cout << ternarySearch(array,2,length);
     return 0;
 }

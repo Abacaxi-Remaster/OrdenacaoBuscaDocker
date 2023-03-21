@@ -1,10 +1,4 @@
-void swap(int &a, int &b)
-{
-	int temp = a;
-	a = b;
-	b = temp;
-}
-
+#include "swap.hpp" 
 int Partition(int arr[], int l, int r)
 {
 	int pivot = arr[r];
