@@ -4,8 +4,8 @@
 #include "sort/mergeSort.cpp"
 #include "sort/quickSort.cpp" 
 
-void bubbleSort(int *array, int length);
-void mergeSort(int *array, int length);
-void quickSort(int *array, int length);
+double bubbleSort(int *array, int length);
+double mergeSort(int *array, int length);
+double quickSort(int *array, int length);
 
 #endif
