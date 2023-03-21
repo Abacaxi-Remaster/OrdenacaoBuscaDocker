@@ -64,6 +64,7 @@ int main()
              << "4. Binary" << endl
              << "5. Ternary" << endl
              << "6. Saida" << endl;
+        fflush(stdin);
         cin >> opcao;
 
         switch (opcao)

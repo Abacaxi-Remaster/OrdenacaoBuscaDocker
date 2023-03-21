@@ -3,7 +3,7 @@
 #include "search/binarySearch.cpp"
 #include "search/ternarySearch.cpp"
 
-int binarySearch(int *array, int value, int length);
-int ternarySearch(int *array, int value, int length);
+double binarySearch(int *array, int value, int length);
+double ternarySearch(int *array, int value, int length);
 
 #endif

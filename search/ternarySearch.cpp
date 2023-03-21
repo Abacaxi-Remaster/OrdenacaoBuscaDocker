@@ -1,3 +1,4 @@
+#include "..\sort.hpp"
 int tSearch(int *array, int value, int start, int end)
 {
     if (end > start)
@@ -26,7 +27,18 @@ int tSearch(int *array, int value, int start, int end)
     return -1;
 }
 
-int ternarySearch(int *array, int value, int length)
+double ternarySearch(int *array, int value, int length)
 {
-    return tSearch(array, value, 0, length-1);
+    int arrayAuxiliar[length];
+    for (int i = 0; i < length; i++)
+    {
+        arrayAuxiliar[i] = array[i];
+    }
+    qSort(arrayAuxiliar, 0, length - 1);
+    auto start = steady_clock::now();
+	tSearch(arrayAuxiliar, value, 0, length-1);
+	auto end = steady_clock::now();
+    duration<double, std::micro> time = end - start;
+    double tempo = time.count();
+    return tempo;
 }
