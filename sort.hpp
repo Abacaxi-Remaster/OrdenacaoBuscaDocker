@@ -7,5 +7,6 @@
 double bubbleSort(int *array, int length);
 double mergeSort(int *array, int length);
 double quickSort(int *array, int length);
+void qSort(int arr[], int l, int r);
 
 #endif
