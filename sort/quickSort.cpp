@@ -26,7 +26,19 @@ void qSort(int arr[], int l, int r)
 		qSort(arr, p + 1, r);
 	}
 }
-void quickSort(int *arr, int len)
+double quickSort(int *array, int length)
 {
-	qSort(arr, 0, len-1);
+    int arrayAuxiliar[length];
+    for (int i = 0; i < length; i++)
+        arrayAuxiliar[i] = array[i];
+
+    auto start = steady_clock::now();
+
+	qSort(arrayAuxiliar, 0, length);
+
+
+    auto end = steady_clock::now();
+    duration<double, std::micro> time = end - start;
+    double tempo = time.count();
+    return tempo;
 }

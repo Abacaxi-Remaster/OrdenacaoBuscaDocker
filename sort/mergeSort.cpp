@@ -1,3 +1,7 @@
+#include <chrono>
+
+using namespace std::chrono;
+
 void Merge(int *array, int left, int center, int right)
 {
 	int sizel = center - left + 1; // tamanho da primeira parte
@@ -56,7 +60,19 @@ void mSort(int *array, int start, int end)
 	}
 }
 
-void mergeSort(int *array, int length)
+double mergeSort(int *array, int length)
 {
-	mSort(array, 0, length-1);
+	int arrayAuxiliar[length];
+    for (int i = 0; i < length; i++)
+        arrayAuxiliar[i] = array[i];
+	// testar memcpy da biblioteca <string>
+
+    auto start = steady_clock::now();
+
+	mSort(arrayAuxiliar, 0, length-1);
+
+    auto end = steady_clock::now();
+    duration<double, std::micro> time = end - start;
+    double tempo = time.count();
+    return tempo;
 }
