@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    int length = 5;
+    int length = 4;
     int bottom = 0;
     int ceiling = 10;
     int *array;
