@@ -1,4 +1,4 @@
-#OrdenacaoBuscaDocker
+# OrdenacaoBuscaDocker
 Tarefa 04 - Container da tarefa 03
 
 André Renato Fernandes Cano 
@@ -7,7 +7,7 @@ João Gabriel de Campos Rosa
 Luis Felipe Ferreira Marrote 
 Thiago Loureiro Kosciuk
 
-##Como executar o código:
+## Como executar o código:
 
 Para executar o código de maneira correta, é necessário ter o programa Docker instalado na máquina. Com esse programa, deve-se baixar a pasta do projeto, e abrí-la no terminal, da maneira que preferir. Com o terminal aberto, digitar os seguintes comandos:
 
@@ -20,7 +20,7 @@ Exemplo:
     
     -> docker run --rm -it ordenacao_busca:1
 
-##Sobre o programa:
+## Sobre o programa:
 
 Esse programa cria cinco sequências com tamanhos entre 10000 e 1000000 e números aleatórios entre 20 e 2000000. 
 No início da execução, são demonstrados os tamanhos das 5 sequencias e é aberto o menu.
