@@ -8,6 +8,8 @@
 #include "search.hpp"
 #include "randomArray.hpp"
 
+#include <initializer_list>
+
 #define numdeFunc 5    // numero de fucoes a serem comparadas (sorts e searchs)
 #define qntdeSeq 5     // numero de sequencias analisadas
 #define numMin 20      // menor numero possivel da sequencia
@@ -20,7 +22,7 @@ int meDeUmNumero()
 { // retorna um numero aleatório
     random_device rd;   // non-deterministic generator
     mt19937 gen(rd());  // to seed mersenne twister.
-    uniform_int_distribution<> dist(20,2000000); // distribute results between 1 and 6 inclusive
+    uniform_int_distribution<int> dist(20,2000000); // distribute results between 1 and 6 inclusive
     int numProcurado = dist(gen);
     cout << "O número procurado será: " << numProcurado << endl;
     return numProcurado;
@@ -49,8 +51,9 @@ int main()
 
     random_device rd;   // non-deterministic generator
     mt19937 gen(rd());  // to seed mersenne twister.
-    uniform_int_distribution<> dist2(10000,1000000); // distribute results between 10000 and 1000000 inclusive
-    uniform_int_distribution<> dist1(numMin,numMax); // distribute results between 20 and 2000000 inclusive
+    uniform_int_distribution<int> dist2(10000,1000000); // distribute results between 10000 and 1000000 inclusive
+    uniform_int_distribution<int> dist1(numMin,numMax); // distribute results between 20 and 2000000 inclusive
+
     /// Preenche a matriz com números aleatórios e guarda os tamanhos de cada array.
     for (k = 0; k < qntdeSeq; k++)
     {
