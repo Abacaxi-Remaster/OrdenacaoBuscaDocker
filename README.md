@@ -15,7 +15,9 @@ Para executar o código de maneira correta, é necessário ter o programa Docker
     -> docker run --rm -it nome:<versão>
 
 Exemplo:
+
     -> docker build . -t ordenacao_busca:1
+    
     -> docker run --rm -it ordenacao_busca:1
 
 ##Sobre o programa:
