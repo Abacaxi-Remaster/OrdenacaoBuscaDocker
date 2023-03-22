@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdlib>
+#include <random>
 #include <ctime>
 #include <string>
 #include <chrono>
@@ -16,9 +16,12 @@
 using namespace std;
 using namespace std::chrono;
 
-double meDeUmNumero()
+int meDeUmNumero()
 { // retorna um numero aleatório
-    double numProcurado = numMin + rand() % (numMax - numMin);
+    random_device rd;   // non-deterministic generator
+    mt19937 gen(rd());  // to seed mersenne twister.
+    uniform_int_distribution<> dist(20,2000000); // distribute results between 1 and 6 inclusive
+    int numProcurado = dist(gen);
     cout << "O número procurado será: " << numProcurado << endl;
     return numProcurado;
 }
@@ -44,11 +47,14 @@ int main()
     bool saida = false;
     double temposMedidos[numdeFunc][qntdeSeq] = {0};
 
-    srand(time(0));
+    random_device rd;   // non-deterministic generator
+    mt19937 gen(rd());  // to seed mersenne twister.
+    uniform_int_distribution<> dist2(10000,1000000); // distribute results between 10000 and 1000000 inclusive
+    uniform_int_distribution<> dist1(numMin,numMax); // distribute results between 20 and 2000000 inclusive
     /// Preenche a matriz com números aleatórios e guarda os tamanhos de cada array.
     for (k = 0; k < qntdeSeq; k++)
     {
-        tamanhos[k] = 10000 + rand() % 990000;
+        tamanhos[k] = dist2(gen);
         vetorAleatorio[k] = new int[tamanhos[k]];
         randomArray(&(vetorAleatorio[k]), tamanhos[k], numMin, numMax);
     }
@@ -120,6 +126,10 @@ int main()
             numeroProcurado = meDeUmNumero();
             for (int j = 0; j < qntdeSeq; j++)
             {
+                temposMedidos[0][j] = bubbleSort(vetorAleatorio[j], tamanhos[j]);
+            }
+            for (int j = 0; j < qntdeSeq; j++)
+            {
                 temposMedidos[1][j] = quickSort(vetorAleatorio[j], tamanhos[j]);
             }
             for (int j = 0; j < qntdeSeq; j++)
@@ -132,9 +142,12 @@ int main()
             }
             for (int j = 0; j < qntdeSeq; j++)
             {
+                temposMedidos[4][j] = ternarySearch(vetorAleatorio[j], numeroProcurado, tamanhos[j]);
+            }
+            for (int j = 0; j < qntdeSeq; j++)
+            {
                 printTemposMedidos(temposMedidos[j]);
             }
-
             break;
         }
     } while (!saida);
