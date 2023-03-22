@@ -1,5 +1,5 @@
 #include "../sort.hpp"
-int tSearch(int *array, int value, int start, int end)
+void tSearch(int *array, int value, int start, int end)
 {
     if (end > start)
     {
@@ -7,11 +7,11 @@ int tSearch(int *array, int value, int start, int end)
         int mid2 = end - (end - start) / 3;
         if (array[mid1] == value)
         {
-            return mid1;
+            return;
         }
         if (array[mid2] == value)
         {
-            return mid2;
+            return;
         }
 
         if (array[mid1] > value)
@@ -24,7 +24,7 @@ int tSearch(int *array, int value, int start, int end)
         }
         return tSearch(array, value, mid2, end);
     }
-    return -1;
+    return;
 }
 
 double ternarySearch(int *array, int value, int length)
@@ -36,8 +36,8 @@ double ternarySearch(int *array, int value, int length)
     }
     qSort(arrayAuxiliar, 0, length - 1);
     auto start = steady_clock::now();
-	tSearch(arrayAuxiliar, value, 0, length-1);
-	auto end = steady_clock::now();
+    tSearch(arrayAuxiliar, value, 0, length - 1);
+    auto end = steady_clock::now();
     duration<double, std::micro> time = end - start;
     double tempo = time.count();
     return tempo;
