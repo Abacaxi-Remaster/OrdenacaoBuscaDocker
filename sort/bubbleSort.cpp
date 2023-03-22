@@ -11,7 +11,6 @@ double bubbleSort(int *array, int length)
     auto start = steady_clock::now();
 
     bool s;
-    int temp = 0;
     do
     {
         s = false;
