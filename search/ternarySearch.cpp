@@ -1,4 +1,4 @@
-#include "..\sort.hpp"
+#include "../sort.hpp"
 int tSearch(int *array, int value, int start, int end)
 {
     if (end > start)
