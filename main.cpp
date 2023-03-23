@@ -143,10 +143,14 @@ int main()
             {
                 temposMedidos[4][j] = ternarySearch(vetorAleatorio[j], numeroProcurado, tamanhos[j]);
             }
-            for (int j = 1; j < qntdeSeq; j++)
-            {
-                printTemposMedidos(temposMedidos[j]);
-            }
+            cout << "Quick sort:     ";
+            printTemposMedidos(temposMedidos[1]);
+            cout << endl << "Merge sort:     ";
+            printTemposMedidos(temposMedidos[2]);
+            cout << endl << "Binary search:  ";
+            printTemposMedidos(temposMedidos[3]);
+            cout << endl << "Ternary search: ";
+            printTemposMedidos(temposMedidos[4]);
             break;
         }
     } while (!saida);
