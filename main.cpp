@@ -20,7 +20,8 @@ using namespace std::chrono;
 
 int meDeUmNumero()
 { // retorna um numero aleatório
-    default_random_engine gen;
+    unsigned seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    default_random_engine gen(seed);
     uniform_int_distribution<int> dist(20,2000000); // distribute results between 1 and 6 inclusive
     int numProcurado = dist(gen);
     cout << "O número procurado será: " << numProcurado << endl;
@@ -48,7 +49,8 @@ int main()
     bool saida = false;
     double temposMedidos[numdeFunc][qntdeSeq] = {0};
 
-    default_random_engine gen;
+    unsigned seed = std::chrono::steady_clock::now().time_since_epoch().count();
+    default_random_engine gen(seed);
     uniform_int_distribution<int> dist2(10000,1000000); // distribute results between 10000 and 1000000 inclusive
     uniform_int_distribution<int> dist1(numMin,numMax); // distribute results between 20 and 2000000 inclusive
 
@@ -127,10 +129,6 @@ int main()
             numeroProcurado = meDeUmNumero();
             for (int j = 0; j < qntdeSeq; j++)
             {
-                temposMedidos[0][j] = bubbleSort(vetorAleatorio[j], tamanhos[j]);
-            }
-            for (int j = 0; j < qntdeSeq; j++)
-            {
                 temposMedidos[1][j] = quickSort(vetorAleatorio[j], tamanhos[j]);
             }
             for (int j = 0; j < qntdeSeq; j++)
@@ -145,7 +143,7 @@ int main()
             {
                 temposMedidos[4][j] = ternarySearch(vetorAleatorio[j], numeroProcurado, tamanhos[j]);
             }
-            for (int j = 0; j < qntdeSeq; j++)
+            for (int j = 1; j < qntdeSeq; j++)
             {
                 printTemposMedidos(temposMedidos[j]);
             }
