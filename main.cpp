@@ -20,8 +20,7 @@ using namespace std::chrono;
 
 int meDeUmNumero()
 { // retorna um numero aleatório
-    random_device rd;   // non-deterministic generator
-    mt19937 gen(rd());  // to seed mersenne twister.
+    default_random_engine gen;
     uniform_int_distribution<int> dist(20,2000000); // distribute results between 1 and 6 inclusive
     int numProcurado = dist(gen);
     cout << "O número procurado será: " << numProcurado << endl;
@@ -49,8 +48,7 @@ int main()
     bool saida = false;
     double temposMedidos[numdeFunc][qntdeSeq] = {0};
 
-    random_device rd;   // non-deterministic generator
-    mt19937 gen(rd());  // to seed mersenne twister.
+    default_random_engine gen;
     uniform_int_distribution<int> dist2(10000,1000000); // distribute results between 10000 and 1000000 inclusive
     uniform_int_distribution<int> dist1(numMin,numMax); // distribute results between 20 and 2000000 inclusive
 
